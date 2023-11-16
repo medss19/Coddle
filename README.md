@@ -1,5 +1,4 @@
-# Coddle
-Coddle, a pioneering website designed in C++ to guide and support students in their coding odyssey.
+#Coddle
 
 **Coddle: Your Coding Odyssey Companion**
 
@@ -11,8 +10,8 @@ Welcome to Coddle, a pioneering website designed in C++ to be your steadfast gui
    - Explore Python, Java, and C++ resources with ease.
    - Access cheatsheets, project links, and video tutorials tailored to each language.
 
-2. **Random Facts:**
-   - Discover random coding facts to keep your knowledge diverse and interesting.
+2. **Code_Sites:**
+   - Discover common coding sites to keep your knowledge diverse and interesting.
 
 3. **Add to Database:**
    - Contribute to our growing database by adding your own cheatsheets, projects, and videos.
@@ -26,8 +25,8 @@ Welcome to Coddle, a pioneering website designed in C++ to be your steadfast gui
    - Choose your preferred programming language.
    - Explore cheatsheets, projects, and video links specific to Python, Java, and C++.
 
-2. **Random Facts:**
-   - Get a quick dose of random coding facts to enhance your understanding.
+2. **Common Coding Sites:**
+   - Get a quick dose of common coding sites to quickly access.
 
 3. **Contribute:**
    - Accessible to Admins: Add new content to our database and share your knowledge.
