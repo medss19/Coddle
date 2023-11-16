@@ -4,6 +4,7 @@
 #include <string>
 #include <cstring>
 #include <cctype>
+#include <conio.h>
 
 using namespace std;
 
@@ -316,13 +317,29 @@ menu:
                                 break;
                             case 5:
                                 {
-                                    ofstream writenew;
-                                    writenew.open("PythonInfo", ios::binary | ios::app);
-                                    cin.ignore();
-                                    mov.p_setdata();
-                                    writenew.write((char *)&mov, sizeof(Coddle));
-                                    total++;
-                                    writenew.close();
+                                    string pass ="";
+                                    char ch;
+                                    cout << "Enter pass\n";
+                                    ch = _getch();
+                                    while(ch != 13){//character 13 is enter
+                                        pass.push_back(ch);
+                                        cout << '*';
+                                        ch = _getch();
+                                    }
+                                    if(pass == "Mitsakos"){
+                                        cout << "\nAccess granted :P\n";
+                                    
+                                        ofstream writenew;
+                                        writenew.open("PythonInfo", ios::binary | ios::app);
+                                        cin.ignore();
+                                        mov.p_setdata();
+                                        writenew.write((char *)&mov, sizeof(Coddle));
+                                        total++;
+                                        writenew.close();
+                                    }
+                                    else{
+                                        cout << "\nAccess aborted...\n";
+                                    }
                                 }
                                 goto search_p_menu;
                                 break;
@@ -416,6 +433,18 @@ menu:
                                 break;
                             case 5:
                                 {
+                                    string pass ="";
+                                    char ch;
+                                    cout << "Enter pass\n";
+                                    ch = _getch();
+                                    while(ch != 13){//character 13 is enter
+                                        pass.push_back(ch);
+                                        cout << '*';
+                                        ch = _getch();
+                                    }
+                                    if(pass == "Mitsakos"){
+                                        cout << "\nAccess granted :P\n";
+                                    
                                     ofstream writenew;
                                     writenew.open("JavaInfo", ios::binary | ios::app);
                                     cin.ignore();
@@ -423,6 +452,10 @@ menu:
                                     writenew.write((char *)&mov, sizeof(Coddle));
                                     total++;
                                     writenew.close();
+                                    }
+                                    else{
+                                        cout << "\nAccess aborted...\n";
+                                    }
                                 }
                                 goto search_j_menu;
                                 break;
@@ -516,6 +549,18 @@ menu:
                                 break;
                             case 5:
                                 {
+                                    string pass ="";
+                                    char ch;
+                                    cout << "Enter pass\n";
+                                    ch = _getch();
+                                    while(ch != 13){//character 13 is enter
+                                        pass.push_back(ch);
+                                        cout << '*';
+                                        ch = _getch();
+                                    }
+                                    if(pass == "Mitsakos"){
+                                        cout << "\nAccess granted :P\n";
+                                    
                                     ofstream writenew;
                                     writenew.open("C++Info", ios::binary | ios::app);
                                     cin.ignore();
@@ -523,6 +568,10 @@ menu:
                                     writenew.write((char *)&mov, sizeof(Coddle));
                                     total++;
                                     writenew.close();
+                                    }
+                                    else{
+                                        cout << "\nAccess aborted...\n";
+                                    }
                                 }
                                 goto search_c_menu;
                                 break;
@@ -553,6 +602,18 @@ menu:
 
             case 3:  //Add to  db
             {
+                string pass ="";
+                char ch;
+                cout << "Enter pass\n";
+                ch = _getch();
+                while(ch != 13){//character 13 is enter
+                    pass.push_back(ch);
+                    cout << '*';
+                    ch = _getch();
+                }
+                if(pass == "Mitsakos"){
+                    cout << "\nAccess granted :P\n";
+
                 ofstream writenew;
                 writenew.open("SitesInfo", ios::binary | ios::app);
                 cin.ignore();
@@ -560,7 +621,14 @@ menu:
                 writenew.write((char *)&mov, sizeof(Coddle));
                 total++;
                 writenew.close();
+                }else
+                {
+                    cout << "\nAccess aborted...\n";
+                }
             }
+            goto search_main_menu;
+            break; 
+            
             case 4:  //About
                 cout << "Coddle: Your Coding Odyssey Companion \n\n"
                         "Welcome to Coddle, a pioneering website designed in C++ to be your steadfast guide and support in the coding odyssey! \n" 
