@@ -22,13 +22,14 @@ private :
     char c_project[100];
     char c_video[100];
 
+    char site[100];
+
 public:
 
-    void getdata(){
-
-    }
-    void setdata(){
-
+    void setdata() // Codesites
+    {
+        cout << "Code site: "; cin.getline(site, 100);
+        cout << endl;
     }
 
     void p_setdata()  //Python setdata
@@ -52,6 +53,13 @@ public:
         cout<<"Video links: ";cin.getline(c_video, 100);
         cout << endl;
     }
+
+    void getdata()
+    {
+        cout << endl;
+        cout << setw(7) << right << site << endl;
+    }
+
     void pc_getdata()   //Python getdata
     {
         cout << endl;
@@ -178,6 +186,9 @@ int main()
     fstream mcfile;
     mcfile.open("C++Info", ios::binary | ios::out | ios::in | ios::app);
 
+    fstream msfile;
+    msfile.open("SitesInfo", ios::binary | ios::out | ios::in | ios::app);
+
     Coddle mov;
 
 menu:
@@ -190,12 +201,13 @@ menu:
         cout << mymnp;
         cout << "MENU \n";
         cout << "1. Search by Language \n";
-        cout << "2. Random facts \n";
-        cout << "3. Add a film to database \n";
+        cout << "2. Common Coding sites \n";
+        cout << "3. Add CodeSite (accessible to Admin only) \n";
         cout << "4. About \n";
         cout << "0. Exit \n";
         cout << endl;
         cout << "Your choice: "; cin >> choice;
+        cout << endl;
         switch (choice) 
         {
             case 1:  //Search by Language
@@ -521,28 +533,28 @@ menu:
                         break;
                 }
 
-            case 2:  //Random Facts
-            {
-                srand(time(0));
-                int smth;
-                smth = (rand() % total);
-                ifstream readfile;
-                readfile.open("MoviesInfo", ios::binary);
-                readfile.seekg(0, ios::end);
-                int pos_end = readfile.tellg();
-                int num_obj = pos_end / sizeof(Coddle);
-                int position = (smth - 1)*sizeof(Coddle);
-                readfile.seekg(position);
-                readfile.read((char *)&mov, sizeof(Coddle));
-                mov.getdata();
-                readfile.close();
+            case 2:  //CodeSites
+                msfile.open("SitesInfo", ios::binary | ios::out | ios::in | ios::app);
+                msfile.seekg(0);
+                msfile.clear();
+                if (msfile.is_open())
+                {
+                    cout << "Common Coding Sites :" << endl;
+                    while (msfile.read((char *)&mov, sizeof(Coddle)))
+                    {
+                            
+                            mov.getdata();
+                            sindicator = true;
+                    }
+                    msfile.close();
+                }
                 cout << endl;
                 break;
-            }
+
             case 3:  //Add to  db
             {
                 ofstream writenew;
-                writenew.open("MoviesInfo", ios::binary | ios::app);
+                writenew.open("SitesInfo", ios::binary | ios::app);
                 cin.ignore();
                 mov.setdata();
                 writenew.write((char *)&mov, sizeof(Coddle));
@@ -550,8 +562,10 @@ menu:
                 writenew.close();
             }
             case 4:  //About
-                cout << "This is a sample appliction \n"
-                        "creator: Medha \n" << endl;
+                cout << "Coddle: Your Coding Odyssey Companion \n\n"
+                        "Welcome to Coddle, a pioneering website designed in C++ to be your steadfast guide and support in the coding odyssey! \n" 
+                        "Whether you're a budding programmer or an experienced coder, Coddle is here to enrich your learning experience and provide valuable resources. \n\n"
+                        "Creators: Medha \n\t Aakriti \n\t Lakshya\n" << endl;
                 break;
 
             case 0: //Exit
