@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class Coddle 
+class Coddle //Coddle class
 {
 private :
     char p_cheatsheet[100];
