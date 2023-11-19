@@ -11,47 +11,47 @@ using namespace std;
 class Coddle //Coddle class
 {
 private :
-    char p_cheatsheet[100];
-    char p_project[100];
-    char p_video[100];
+    char p_cheatsheet[250];
+    char p_project[250];
+    char p_video[250];
 
-    char j_cheatsheet[100];
-    char j_project[100];
-    char j_video[100];
+    char j_cheatsheet[250];
+    char j_project[250];
+    char j_video[250];
 
-    char c_cheatsheet[100];
-    char c_project[100];
-    char c_video[100];
+    char c_cheatsheet[250];
+    char c_project[250];
+    char c_video[250];
 
-    char site[100];
+    char site[250];
 
 public:
 
     void setdata() // Codesites
     {
-        cout << "Code site: "; cin.getline(site, 100);
+        cout << "Code site: "; cin.getline(site, 250);
         cout << endl;
     }
 
     void p_setdata()  //Python setdata
     {
-        cout << "Cheatsheet links: "; cin.getline(p_cheatsheet, 100);
-        cout<<"Project links: "; cin.getline(p_project, 100);
-        cout<<"Video links: ";cin.getline(p_video, 100);
+        cout << "Cheatsheet links: "; cin.getline(p_cheatsheet, 250);
+        cout<<"Project links: "; cin.getline(p_project, 250);
+        cout<<"Video links: ";cin.getline(p_video, 250);
         cout << endl;
     }
     void j_setdata()  //Java setdata
     {
-        cout << "Cheatsheet links: "; cin.getline(j_cheatsheet, 100);
-        cout<<"Project links: "; cin.getline(j_project, 100);
-        cout<<"Video links: ";cin.getline(j_video, 100);
+        cout << "Cheatsheet links: "; cin.getline(j_cheatsheet, 250);
+        cout<<"Project links: "; cin.getline(j_project, 250);
+        cout<<"Video links: ";cin.getline(j_video, 250);
         cout << endl;
     }
     void c_setdata()  //C++ setdata
     {
-        cout << "Cheatsheet links: "; cin.getline(c_cheatsheet, 100);
-        cout<<"Project links: "; cin.getline(c_project, 100);
-        cout<<"Video links: ";cin.getline(c_video, 100);
+        cout << "Cheatsheet links: "; cin.getline(c_cheatsheet, 250);
+        cout<<"Project links: "; cin.getline(c_project, 250);
+        cout<<"Video links: ";cin.getline(c_video, 250);
         cout << endl;
     }
 
@@ -64,63 +64,54 @@ public:
     void pc_getdata()   //Python getdata
     {
         cout << endl;
-        // cout << setw(7) << right << "Cheatsheet links: \n";
         cout << setw(7) << right << p_cheatsheet << endl;
     }
 
     void pp_getdata()
     {
         cout << endl;
-        // cout << setw(7) << right << "Project links: \n";
         cout << setw(7) << right << p_project << endl;
     }
 
     void pv_getdata()
     {
         cout << endl;
-        // cout << setw(7) << right << "Video links: \n";
         cout << setw(7) << right << p_video << endl;
     }
 
     void jc_getdata()   //Java getdata
     {
         cout << endl;
-        // cout << setw(7) << right << "Cheatsheet links: \n";
         cout << setw(7) << right << j_cheatsheet << endl;
     }
 
     void jp_getdata()
     {
         cout << endl;
-        // cout << setw(7) << right << "Project links: \n";
         cout << setw(7) << right << j_project << endl;
     }
 
     void jv_getdata()
     {
         cout << endl;
-        // cout << setw(7) << right << "Video links: \n";
         cout << setw(7) << right << j_video << endl;
     }
 
     void cc_getdata()    //C++ getdata
     {
         cout << endl;
-        // cout << setw(7) << right << "Cheatsheet links: \n";
         cout << setw(7) << right << c_cheatsheet << endl;
     }
 
     void cp_getdata()
     {
         cout << endl;
-        // cout << setw(7) << right << "Project links: \n";
         cout << setw(7) << right << c_project << endl;
     }
 
     void cv_getdata()
     {
         cout << endl;
-        // cout << setw(7) << right << "Video links: \n";
         cout << setw(7) << right << c_video << endl;
     }
 
@@ -217,7 +208,7 @@ menu:
             search_main_menu:
                 cout << mymnp;
                 cout << endl;
-                cout <<"\t\t\t" << "WELCOME TO COODLE.COM" << endl;
+                cout <<"\t\t\t" << "WELCOME TO CODDLE.COM" << endl;
                 cout << endl;
                 cout << mymnp;
                 cout << endl;
@@ -626,7 +617,7 @@ menu:
                     cout << "\nAccess aborted...\n";
                 }
             }
-            goto search_main_menu;
+            goto menu;
             break; 
             
             case 4:  //About
