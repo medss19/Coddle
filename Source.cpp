@@ -212,7 +212,7 @@ menu:
                 cout << endl;
                 cout << mymnp;
                 cout << endl;
-                cout << "1. Search for Pyhton \n";
+                cout << "1. Search for Python \n";
                 cout << "2. Search for Java \n";
                 cout << "3. Search for C++ \n";
                 cout << "4. Back to main menu \n";
